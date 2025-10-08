@@ -1,0 +1,40 @@
+.faq{
+    max-width: 900px;
+    margin: 56px auto;
+    padding: 0 24px;
+}
+
+.faq h2{ margin-bottom: 12px; font-size: clamp(22px,4vw,28px); }
+
+.faq__root{ display: grid; gap: 8px; }
+
+.faq__item{
+    background: color-mix(in oklab, var(--bg) 92%, black 8%);
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.faq__trigger{
+    width: 100%;
+    text-align: left;
+    padding: 14px 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.faq__chev{ transition: transform .2s ease; margin-left: 12px; }
+
+.faq__content{
+    padding: 0 16px 14px 16px;
+    color: var(--muted);
+}
+
+/* rotate chevron when open */
+[data-state="open"] .faq__chev { transform: rotate(180deg); }
+
+/* keyboard focus */
+.faq__trigger:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
