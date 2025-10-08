@@ -10,7 +10,7 @@ export default function GradientBackdrop() {
         (mat.current.uniforms.u_res.value as THREE.Vector2).set(size.width, size.height);
     });
 
-    const vertex = `
+    const vertex = /* glsl */`
     varying vec2 vUv;
     void main(){
       vUv = uv;
@@ -18,24 +18,25 @@ export default function GradientBackdrop() {
     }
   `;
 
-    const fragment = `
+    const fragment = /* glsl */`
     precision mediump float;
     uniform vec2 u_res;
     varying vec2 vUv;
 
     void main(){
-      // teal-ish gradient with a soft vignette
+      // deep teal gradient + subtle vignette
       vec3 top = vec3(0.05, 0.18, 0.22);
       vec3 bot = vec3(0.04, 0.10, 0.13);
       vec3 col = mix(top, bot, vUv.y);
       float r = distance(vUv, vec2(0.5));
-      col *= smoothstep(1.0, 0.55, r); // vignette
+      col *= smoothstep(1.0, 0.58, r);
       gl_FragColor = vec4(col, 1.0);
     }
   `;
 
     return (
-        <mesh position={[0, 0, -0.5]} scale={[4.0, 2.6, 1]}>
+        // Make it BIG and slightly behind the shard so it always fills the view
+        <mesh position={[0, 0, -1.2]} scale={[10, 6, 1]}>
             <planeGeometry args={[1, 1, 1, 1]} />
             <shaderMaterial
                 ref={mat}
