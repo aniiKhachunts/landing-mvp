@@ -1,0 +1,112 @@
+/* Section wrapper */
+.final{
+    padding: 0 24px;
+    margin: 72px auto 96px;
+    max-width: 1200px;
+}
+
+/* Gradient callout card */
+.final__card{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    align-items: center;
+    border-radius: calc(var(--radius) + 6px);
+    /* soft gradient surface */
+    background:
+            radial-gradient(140% 120% at 0% 0%, rgba(94,224,255,0.20) 0%, rgba(94,224,255,0.0) 60%),
+            radial-gradient(120% 120% at 100% 100%, rgba(62,224,196,0.18) 0%, rgba(62,224,196,0.0) 55%),
+            color-mix(in oklab, var(--bg) 90%, black 10%);
+    border: 1px solid rgba(255,255,255,.08);
+    box-shadow: 0 24px 70px rgba(0,0,0,.35);
+    padding: clamp(20px, 3vw, 28px);
+}
+
+/* Copy block */
+.final__content{
+    display: grid;
+    gap: 10px;
+    align-content: center;
+    max-width: 620px;
+}
+
+.final__eyebrow{
+    display: inline-block;
+    font-size: 12px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.final__title{
+    margin: 0;
+    font-size: clamp(24px, 5vw, 40px);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+}
+
+.final__sub{
+    margin: 0;
+    color: var(--muted);
+    max-width: 60ch;
+}
+
+.final__actions{
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 6px;
+    flex-wrap: wrap;
+}
+
+/* A subtle ghost button style that matches your theme */
+.btn--ghost{
+    background: transparent;
+    border: 1px solid rgba(255,255,255,.18);
+    color: var(--fg);
+    border-radius: 999px;
+    padding: 10px 16px;
+}
+
+/* Orb container (circular frame) */
+.final__orb{
+    width: clamp(220px, 26vw, 340px);
+    aspect-ratio: 1 / 1;
+    border-radius: 9999px;
+    position: relative;
+    overflow: hidden;
+    /* gradient backdrop inside the circle */
+    background:
+            radial-gradient(60% 60% at 50% 40%, rgba(94,224,255,0.35) 0%, rgba(94,224,255,0.08) 55%, transparent 70%),
+            linear-gradient(180deg, #0e151b 0%, #0b0f14 100%);
+    box-shadow:
+            inset 0 0 0 1px rgba(255,255,255,.06),
+            0 18px 50px rgba(0,0,0,.35);
+}
+
+/* Canvas fills the circle; keep it block-level */
+.final__orbCanvas{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Fallback (reduced motion) reuses the same circular backdrop */
+.final__orbFallback{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Responsive: stack and center */
+@media (max-width: 900px){
+    .final__card{
+        grid-template-columns: 1fr;
+        gap: 18px;
+        text-align: center;
+        padding: 22px;
+    }
+    .final__actions{ justify-content: center; }
+    .final__orb{ justify-self: center; }
+}

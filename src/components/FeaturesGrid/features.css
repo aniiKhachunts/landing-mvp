@@ -1,0 +1,59 @@
+/* src/components/FeaturesGrid/features.css */
+
+.features {
+    max-width: 1200px;
+    margin: 56px auto;
+    padding: 0 24px;
+}
+
+.features__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    perspective: 800px;               /* enables the subtle 3D tilt */
+}
+
+.feature {
+    background: color-mix(in oklab, var(--bg) 92%, black 8%);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 18px 18px 20px;
+    display: grid;
+    gap: 8px;
+    align-content: start;
+}
+
+.feature__icon {
+    width: 64px;
+    height: 64px;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,.25));
+    pointer-events: none;             /* avoid stealing hover from the card */
+}
+
+.feature__title {
+    margin: 2px 0 0;
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.feature__blurb {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+    .features__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+@media (max-width: 640px) {
+    .features__grid {
+        grid-template-columns: 1fr;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .features__grid { perspective: none; }
+}
