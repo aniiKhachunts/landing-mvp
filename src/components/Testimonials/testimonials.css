@@ -1,0 +1,36 @@
+/* Horizontal scroll-snap container (as in your plan) */
+.testis{
+    display: grid;
+    grid-auto-flow: column;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 16px 24px;
+    max-width: 1200px;
+    margin: 48px auto;
+}
+
+.testi{
+    scroll-snap-align: center;
+    min-width: min(520px, 86vw);
+    background: color-mix(in oklab, var(--bg) 92%, black 8%);
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 16px;
+    display: grid;
+    gap: 10px;
+}
+
+.testi__head{
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 10px;
+    align-items: center;
+}
+
+.testi__avatar{ width:40px; height:40px; border-radius:999px; object-fit:cover; }
+.testi__name{ font-weight:600; }
+.testi__role{ color:var(--muted); font-size:12px; }
+
+.testi__quote{ margin: 2px 0 0; font-size: 16px; line-height: 1.5; }
