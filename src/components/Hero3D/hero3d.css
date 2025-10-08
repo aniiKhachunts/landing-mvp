@@ -50,11 +50,14 @@
 
 .hero__canvas,
 .hero__fallback {
-    width: min(720px, 48vw);
-    height: clamp(420px, 56vh, 680px);
+    width: min(780px, 50vw);
+    aspect-ratio: 16 / 9;
+    height: auto;
+    max-height: min(68vh, 720px);
     border-radius: var(--radius);
     box-shadow: 0 20px 60px rgba(0,0,0,.35);
     overflow: hidden;
+    display: block;
 }
 
 .hero__fallback {
@@ -74,7 +77,8 @@
 
     .hero__canvas,
     .hero__fallback {
-        width: min(88vw, 560px);
-        height: clamp(280px, 44vh, 520px);
+       width: min(92vw, 680px);
+       aspect-ratio: 16 / 9;
+       height: auto;
     }
 }
