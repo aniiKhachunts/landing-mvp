@@ -12,6 +12,7 @@ import NetworksMap from "./components/NetworksMap/NetworksMap.tsx";
 import Testimonials from "./components/Testimonials/Testimonials.tsx";
 import FAQ from "./components/FAQ/FAQ.tsx";
 import FinalCTA from "./components/FinalCTA/FinalCTA.tsx";
+import Footer from "./components/Footer/Footer.tsx";
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
             <Testimonials/>
             <FAQ/>
             <FinalCTA/>
+            <Footer/>
         </>
     )
 }
