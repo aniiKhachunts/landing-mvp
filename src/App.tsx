@@ -4,6 +4,14 @@ import Hero3D from "./components/Hero3D/Hero3D.tsx";
 import TrustMarquee from "./components/TrustMarquee/TrustMarquee.tsx";
 import StoryTeaser from "./components/StoryTeaser/StoryTeaser.tsx";
 import ProductMockScroll from "./components/ProductMockScroll/ProductMockScroll.tsx";
+import FeaturesGrid from "./components/FeaturesGrid/FeaturesGrid.tsx";
+import MetricsPanel from "./components/MetricsPanel/MetricsPanel.tsx";
+import Tokenomics from "./components/Tokenomics/Tokenomics.tsx";
+import SecurityAudits from "./components/SecurityAudits/SecurityAudits.tsx";
+import NetworksMap from "./components/NetworksMap/NetworksMap.tsx";
+import Testimonials from "./components/Testimonials/Testimonials.tsx";
+import FAQ from "./components/FAQ/FAQ.tsx";
+import FinalCTA from "./components/FinalCTA/FinalCTA.tsx";
 
 function App() {
 
@@ -11,18 +19,17 @@ function App() {
         <>
             <Header/>
             <Hero3D/>
-            <TrustMarquee />
-            <StoryTeaser />
-            <ProductMockScroll />
-            <div id="product" style={{ height: '100vh', padding: '24px' }}>Product section</div>
-            <div id="features" style={{ height: '100vh', padding: '24px' }}>Features section</div>
-            <div id="metrics" style={{ height: '100vh', padding: '24px' }}>Metrics section</div>
-            <div id="token" style={{ height: '100vh', padding: '24px' }}>Token section</div>
-            <div id="security" style={{ height: '100vh', padding: '24px' }}>Security section</div>
-            <div id="networks" style={{ height: '100vh', padding: '24px' }}>Networks section</div>
-            <div id="testimonials" style={{ height: '100vh', padding: '24px' }}>Testimonials section</div>
-            <div id="faq" style={{ height: '100vh', padding: '24px' }}>FAQ section</div>
-            <div id="contact" style={{ height: '100vh', padding: '24px' }}>Contact section</div>
+            <TrustMarquee/>
+            <StoryTeaser/>
+            <ProductMockScroll/>
+            <FeaturesGrid/>
+            <MetricsPanel/>
+            <Tokenomics/>
+            <SecurityAudits/>
+            <NetworksMap/>
+            <Testimonials/>
+            <FAQ/>
+            <FinalCTA/>
         </>
     )
 }
