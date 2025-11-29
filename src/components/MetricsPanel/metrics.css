@@ -1,52 +1,47 @@
-/* src/components/MetricsPanel/metrics.css */
-
-.metrics {
-    max-width: 1200px;
-    margin: 56px auto;
-    padding: 0 24px;
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 16px;
+.metrics{
+    max-width:1200px;
+    margin:56px auto;
+    padding:0 24px;
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:16px;
 }
 
-.metric {
-    background: color-mix(in oklab, var(--bg) 92%, black 8%);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    padding: 16px;
-    display: grid;
-    gap: 8px;
+.metric{
+    background:color-mix(in oklab,var(--bg) 92%,black 8%);
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    padding:16px;
+    display:grid;
+    gap:8px;
 }
 
-.metric__label {
-    color: var(--muted);
-    font-size: 12px;
-    letter-spacing: .08em;
-    text-transform: uppercase;
+.metric__label{
+    color:var(--muted);
+    font-size:12px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
 }
 
-.metric__value {
-    font-weight: 700;
-    font-size: 22px;
-    line-height: 1.2;
+.metric__value{
+    font-weight:700;
+    font-size:22px;
+    line-height:1.2;
 }
 
-.metric__spark {
-    height: 40px;
-    margin-top: 6px;
+.metric__spark{
+    height:40px;
+    margin-top:6px;
 }
 
-.metrics__note {
-    grid-column: 1 / -1;
-    color: var(--muted);
-    opacity: .8;
-    margin-top: 4px;
+.metrics__note{
+    grid-column:1 / -1;
+    color:var(--muted);
+    opacity:.8;
+    margin-top:4px;
 }
 
-/* responsive */
-@media (max-width: 960px) {
-    .metrics {
-        grid-template-columns: 1fr;
-    }
+@media (max-width:960px){
+    .metrics{grid-template-columns:1fr}
 }

@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
-import clsx from 'classnames';
-import './header.css';
+import { useEffect, useState } from 'react'
+import clsx from 'classnames'
+import './header.css'
 
 const SECTIONS = [
     'product',
@@ -12,50 +12,67 @@ const SECTIONS = [
     'testimonials',
     'faq',
     'contact',
-] as const;
+] as const
 
 export function Header() {
-    const [active, setActive] = useState<string>('product');
+    const [active, setActive] = useState<(typeof SECTIONS)[number]>('product')
 
     useEffect(() => {
-        const obs = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((e) => {
-                    if (e.isIntersecting) {
-                        setActive(e.target.id);
-                    }
-                });
-            },
-            { root: null, threshold: 0.5 }
-        );
-
-        SECTIONS.forEach((id) => {
-            const el = document.getElementById(id);
-            if (el) obs.observe(el);
-        });
-
-        return () => obs.disconnect();
-    }, []);
+        const onScroll = () => {
+            const headerH = document.querySelector<HTMLElement>('.hdr')?.offsetHeight ?? 56
+            let current: (typeof SECTIONS)[number] = 'product'
+            let best = -1e9
+            for (const id of SECTIONS) {
+                const el = document.getElementById(id)
+                if (!el) continue
+                const top = el.getBoundingClientRect().top - headerH - 1
+                if (top <= 0 && top > best) {
+                    best = top
+                    current = id
+                }
+            }
+            if (window.scrollY < 2) current = 'product'
+            setActive(current)
+        }
+        onScroll()
+        let raf = 0
+        const handler = () => {
+            cancelAnimationFrame(raf)
+            raf = requestAnimationFrame(onScroll)
+        }
+        window.addEventListener('scroll', handler, { passive: true })
+        window.addEventListener('resize', handler)
+        return () => {
+            cancelAnimationFrame(raf)
+            window.removeEventListener('scroll', handler)
+            window.removeEventListener('resize', handler)
+        }
+    }, [])
 
     return (
         <header className="hdr">
-            <div className="hdr__logo">AURORA X1</div>
+            <div className="hdr__wrap">
+                <a href="#product" className="hdr__logo">
+                    <span className="hdr__mark" />
+                    FluxSim
+                </a>
 
-            <nav className="hdr__nav">
-                {SECTIONS.map((id) => (
-                    <a
-                        key={id}
-                        href={`#${id}`}
-                        className={clsx('hdr__link', { 'is-active': active === id })}
-                    >
-                        {id}
-                    </a>
-                ))}
-            </nav>
+                <nav className="hdr__nav" aria-label="Primary">
+                    {SECTIONS.map(id => (
+                        <a
+                            key={id}
+                            href={`#${id}`}
+                            className={clsx('hdr__link', { 'is-active': active === id })}
+                        >
+                            {id}
+                        </a>
+                    ))}
+                </nav>
 
-            <a className="btn btn--primary" href="#demo">Open demo</a>
+                <a className="hdr__cta btn btn--primary" href="#demo">Open demo</a>
+            </div>
         </header>
-    );
+    )
 }
 
-export default Header;
+export default Header

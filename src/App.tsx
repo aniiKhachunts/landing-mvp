@@ -1,37 +1,38 @@
 import './App.css'
-import Header from "./components/Header/Header.tsx";
-import Hero3D from "./components/Hero3D/Hero3D.tsx";
-import TrustMarquee from "./components/TrustMarquee/TrustMarquee.tsx";
-import StoryTeaser from "./components/StoryTeaser/StoryTeaser.tsx";
-import ProductMockScroll from "./components/ProductMockScroll/ProductMockScroll.tsx";
-import FeaturesGrid from "./components/FeaturesGrid/FeaturesGrid.tsx";
-import MetricsPanel from "./components/MetricsPanel/MetricsPanel.tsx";
-import Tokenomics from "./components/Tokenomics/Tokenomics.tsx";
-import SecurityAudits from "./components/SecurityAudits/SecurityAudits.tsx";
-import NetworksMap from "./components/NetworksMap/NetworksMap.tsx";
-import Testimonials from "./components/Testimonials/Testimonials.tsx";
-import FAQ from "./components/FAQ/FAQ.tsx";
-import FinalCTA from "./components/FinalCTA/FinalCTA.tsx";
-import Footer from "./components/Footer/Footer.tsx";
+import Header from "./components/Header/Header"
+import TrustMarquee from "./components/TrustMarquee/TrustMarquee"
+import StoryTeaser from "./components/StoryTeaser/StoryTeaser"
+import ProductMockScroll from "./components/ProductMockScroll/ProductMockScroll"
+import FeaturesGrid from "./components/FeaturesGrid/FeaturesGrid"
+import MetricsPanel from "./components/MetricsPanel/MetricsPanel"
+import Tokenomics from "./components/Tokenomics/Tokenomics"
+import SecurityAudits from "./components/SecurityAudits/SecurityAudits"
+import NetworksMap from "./components/NetworksMap/NetworksMap"
+import Testimonials from "./components/Testimonials/Testimonials"
+import FAQ from "./components/FAQ/FAQ"
+import FinalCTA from "./components/FinalCTA/FinalCTA"
+import Footer from "./components/Footer/Footer"
+import HeroPhone from "./components/HeroPhone/HeroPhone"
 
 function App() {
-
     return (
         <>
-            <Header/>
-            <Hero3D/>
-            <TrustMarquee/>
-            <StoryTeaser/>
-            <ProductMockScroll/>
-            <FeaturesGrid/>
-            <MetricsPanel/>
-            <Tokenomics/>
-            <SecurityAudits/>
-            <NetworksMap/>
-            <Testimonials/>
-            <FAQ/>
-            <FinalCTA/>
-            <Footer/>
+            <Header />
+            <div className="site">
+                <HeroPhone />
+                <TrustMarquee />
+                <StoryTeaser />
+                <ProductMockScroll />
+                <FeaturesGrid />
+                <MetricsPanel />
+                <Tokenomics />
+                <SecurityAudits />
+                <NetworksMap />
+                <Testimonials />
+                <FAQ />
+                <FinalCTA />
+                <Footer />
+            </div>
         </>
     )
 }

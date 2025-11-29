@@ -1,19 +1,111 @@
 .trust {
-    padding: 20px 0;
-    border-top: 1px solid rgba(255,255,255,0.06);
-    border-bottom: 1px solid rgba(255,255,255,0.06);
-    background: color-mix(in oklab, var(--bg) 90%, transparent);
+    position: relative;
+    padding: 16px 0;
+    margin: 8px 0 28px;
+    isolation: isolate;
+}
+
+.trust__band {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 18px 18px 22px;
+    border-radius: 20px;
+    background: radial-gradient(160% 120% at 50% 0%, rgba(94, 224, 255, .08) 0%, rgba(94, 224, 255, 0) 60%),
+    color-mix(in oklab, var(--bg) 88%, black 12%);
+    border: 1px solid rgba(255, 255, 255, .10);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .35), 0 0 0 1px rgba(255, 255, 255, .04) inset;
+    overflow: hidden;
+}
+
+.trust__chip {
+    display: inline-block;
+    margin: 0 0 10px 6px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--fg);
+    background: linear-gradient(90deg, rgba(94, 224, 255, .18), rgba(62, 224, 196, .14));
+    border: 1px solid rgba(255, 255, 255, .14);
+}
+
+.trust__row {
+    position: relative;
+    height: 64px;
+    padding: 6px 0;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 56px, #000 calc(100% - 56px), transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0, #000 56px, #000 calc(100% - 56px), transparent 100%);
+}
+
+.trust__logoWrap {
+    display: grid;
+    place-items: center;
+    width: 140px;
+    height: 52px;
+    margin: 0 10px;
+    border-radius: 14px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, .03), rgba(255, 255, 255, 0));
+    border: 1px solid rgba(255, 255, 255, .06);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, .22);
+    transition: transform .16s ease, border-color .16s ease, background .16s ease;
 }
 
 .trust__logo {
-    display: inline-block;
-    height: 40px;
-    margin: 0 32px;
-    filter: grayscale(100%) opacity(0.9);
-    transition: filter 160ms ease, transform 160ms ease;
+    display: block;
+    max-width: 80%;
+    max-height: 26px;
+    width: auto;
+    height: auto;
+    opacity: .85;
+    filter: grayscale(1) brightness(2.2) contrast(1.15);
+    transition: opacity .16s ease, filter .16s ease, transform .16s ease;
 }
 
-.trust__logo:hover {
-    filter: grayscale(0%) opacity(1);
-    transform: translateY(-2px);
+.trust__logoWrap:hover {
+    border-color: rgba(255, 255, 255, .18);
+    background: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, 0));
 }
+
+.trust__logoWrap:hover .trust__logo {
+    opacity: 1;
+    filter: grayscale(0) brightness(2) contrast(1.1);
+    transform: scale(1.01);
+}
+
+
+.trust__edge {
+    position: absolute;
+    top: -1px;
+    bottom: -1px;
+    width: 84px;
+    pointer-events: none;
+    mix-blend: plus-lighter;
+}
+
+.trust__edge--l {
+    left: -1px;
+    background: linear-gradient(90deg, rgba(94, 224, 255, .25), rgba(94, 224, 255, 0));
+}
+
+.trust__edge--r {
+    right: -1px;
+    background: linear-gradient(270deg, rgba(62, 224, 196, .25), rgba(62, 224, 196, 0));
+}
+
+@media (max-width: 960px) {
+    .trust__logoWrap {
+        width: 120px;
+        height: 48px;
+    }
+
+    .trust__logo {
+        max-height: 22px;
+    }
+
+    .trust__chip {
+        margin-left: 0;
+    }
+}
+

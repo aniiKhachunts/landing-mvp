@@ -1,36 +1,41 @@
-import * as Accordion from '@radix-ui/react-accordion';
-import './faq.css';
+import * as Accordion from '@radix-ui/react-accordion'
+import './faq.css'
 
-const faqs = [
-    { q: 'Is there a token?', a: 'This is a demo. Token plans are for illustration only.' },
-    { q: 'How do you route orders?', a: 'We aggregate venues and simulate price impact to minimize slippage.' },
-    { q: 'Do I custody funds?', a: 'Non-custodial by design. You keep control of keys.' },
-    { q: 'How do you mitigate MEV?', a: 'Private orderflow + batch routing + venue selection reduce exposure.' },
-    { q: 'Is the code open source?', a: 'Core components are open; integrations vary by venue requirements.' },
-    { q: 'What networks do you support?', a: 'See “Supported networks” section for the current list.' },
-    { q: 'What are the fees?', a: 'Transparent, flat routing fee shown before confirmation.' },
-    { q: 'Is there an API?', a: 'Yes — demo docs are linked from the hero CTA.' },
-];
+const items = [
+    { q: 'Is there a token?', a: 'No. This demo focuses on execution UX and routing. If a token appears in the future, docs will reflect it clearly.' },
+    { q: 'How do you route orders?', a: 'Orders are split across venues using a price–impact model with depth snapshots. The router prefers predictable fills over micro-arb spikes.' },
+    { q: 'Do you protect against MEV?', a: 'Flows can be shipped via private relays and batch submitters where available. The goal is to reduce sandwich opportunities and keep quotes honest.' },
+    { q: 'What does integration look like?', a: 'Use a thin REST layer or a lightweight SDK. You pass pairs and slippage, we return a plan and a prepared transaction.' },
+    { q: 'Which networks are supported?', a: 'Major EVM chains and a few non-EVM L1s. The Networks section shows current coverage; more rollups are queued.' },
+    { q: 'Can I self-host parts of the stack?', a: 'Yes. Core routing can run in your infra with a small set of managed services for market data and relays.' }
+]
 
-export function FAQ() {
+export default function FAQ() {
     return (
-        <section id="faq" className="faq" aria-labelledby="faq-title">
-            <h2 id="faq-title">FAQ</h2>
+        <section id="faq" className="faq">
+            <header className="faq__hdr">
+                <h2>FAQ</h2>
+                <p className="faq__sub">Short answers to common questions</p>
+            </header>
             <Accordion.Root type="single" collapsible className="faq__root">
-                {faqs.map((f, i) => (
+                {items.map((it, i) => (
                     <Accordion.Item key={i} value={`q${i}`} className="faq__item">
-                        <Accordion.Trigger className="faq__trigger">
-                            {f.q}
-                            <span className="faq__chev" aria-hidden>▾</span>
-                        </Accordion.Trigger>
+                        <Accordion.Header className="faq__header">
+                            <Accordion.Trigger className="faq__trigger">
+                                <span className="faq__q">{it.q}</span>
+                                <svg className="faq__chev" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true">
+                                    <path d="M5 8l5 5 5-5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                                </svg>
+                            </Accordion.Trigger>
+                        </Accordion.Header>
                         <Accordion.Content className="faq__content">
-                            <p>{f.a}</p>
+                            <div className="faq__inner">
+                                <div className="faq__a">{it.a}</div>
+                            </div>
                         </Accordion.Content>
                     </Accordion.Item>
                 ))}
             </Accordion.Root>
         </section>
-    );
+    )
 }
-
-export default FAQ;

@@ -1,112 +1,145 @@
-/* Section wrapper */
-.final{
-    padding: 0 24px;
-    margin: 72px auto 96px;
-    max-width: 1200px;
+.cta {
+    max-width: 1280px;
+    margin: 48px auto 64px;
+    padding: 0 24px
 }
 
-/* Gradient callout card */
-.final__card{
+.cta__card {
     position: relative;
-    display: flex;
-    justify-content: center;
-    gap: 28px;
-    align-items: center;
-    border-radius: calc(var(--radius) + 6px);
-    /* soft gradient surface */
-    background:
-            radial-gradient(140% 120% at 0% 0%, rgba(94,224,255,0.20) 0%, rgba(94,224,255,0.0) 60%),
-            radial-gradient(120% 120% at 100% 100%, rgba(62,224,196,0.18) 0%, rgba(62,224,196,0.0) 55%),
-            color-mix(in oklab, var(--bg) 90%, black 10%);
-    border: 1px solid rgba(255,255,255,.08);
-    box-shadow: 0 24px 70px rgba(0,0,0,.35);
-    padding: clamp(20px, 3vw, 28px);
+    border-radius: var(--radius);
+    background: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .02));
+    border: 1px solid rgba(255, 255, 255, .08);
+    box-shadow: 0 30px 100px rgba(0, 0, 0, .35);
+    overflow: hidden
 }
 
-/* Copy block */
-.final__content{
+.cta__shine {
+    position: absolute;
+    inset: -2px;
+    background: radial-gradient(1200px 300px at 0% 0%, rgba(94, 224, 255, .18), transparent 60%), radial-gradient(800px 300px at 100% 100%, rgba(62, 224, 196, .18), transparent 60%);
+    pointer-events: none
+}
+
+.cta__grid {
     display: grid;
-    gap: 10px;
-    align-content: center;
-    max-width: 620px;
+    grid-template-columns:1.1fr .9fr;
+    gap: 32px;
+    padding: 40px 38px
 }
 
-.final__eyebrow{
-    display: inline-block;
-    font-size: 12px;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    color: var(--muted);
-}
-
-.final__title{
-    margin: 0;
-    font-size: clamp(24px, 5vw, 40px);
-    line-height: 1.1;
-    letter-spacing: -0.01em;
-}
-
-.final__sub{
-    margin: 0;
-    color: var(--muted);
-    max-width: 60ch;
-}
-
-.final__actions{
-    display: flex;
-    justify-content: center;
+.cta__copy {
+    display: grid;
     gap: 12px;
-    margin-top: 6px;
-    flex-wrap: wrap;
+    align-content: center
 }
 
-/* A subtle ghost button style that matches your theme */
-.btn--ghost{
-    background: transparent;
-    border: 1px solid rgba(255,255,255,.18);
-    color: var(--fg);
+.cta__eyebrow {
+    color: var(--muted);
+    font-size: 12px;
+    letter-spacing: .22em;
+    text-transform: uppercase
+}
+
+.cta__title {
+    margin: 0;
+    font-size: clamp(22px, 3.6vw, 36px);
+    letter-spacing: -.02em
+}
+
+.cta__sub {
+    margin: 0;
+    color: var(--muted);
+    max-width: 52ch
+}
+
+.cta__actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px
+}
+
+.btn {
     border-radius: 999px;
-    padding: 10px 16px;
+    padding: 11px 18px
 }
 
-/* Orb container (circular frame) */
-.final__orb{
-    width: clamp(220px, 26vw, 340px);
-    aspect-ratio: 1 / 1;
-    border-radius: 9999px;
+.btn--primary {
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    color: #051017
+}
+
+.btn--ghost {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, .14);
+    color: var(--fg)
+}
+
+.cta__viz {
     position: relative;
+    min-height: 210px;
+    border-radius: calc(var(--radius) - 8px);
     overflow: hidden;
-    /* gradient backdrop inside the circle */
-    background:
-            radial-gradient(60% 60% at 50% 40%, rgba(94,224,255,0.35) 0%, rgba(94,224,255,0.08) 55%, transparent 70%),
-            linear-gradient(180deg, #0e151b 0%, #0b0f14 100%);
-    box-shadow:
-            inset 0 0 0 1px rgba(255,255,255,.06),
-            0 18px 50px rgba(0,0,0,.35);
+    isolation: isolate
 }
 
-/* Canvas fills the circle; keep it block-level */
-.final__orbCanvas{
-    width: 100%;
-    height: 100%;
-    display: block;
+.cta__mesh {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(160px 160px at 20% 70%, rgba(94, 224, 255, .28), transparent 60%), radial-gradient(120px 120px at 80% 30%, rgba(62, 224, 196, .25), transparent 60%), linear-gradient(180deg, #0e151b 0%, #0b0f14 100%)
 }
 
-/* Fallback (reduced motion) reuses the same circular backdrop */
-.final__orbFallback{
-    width: 100%;
-    height: 100%;
-    display: block;
+.cta__orb {
+    position: absolute;
+    filter: blur(18px);
+    opacity: .9;
+    mix-blend: screen;
+    border-radius: 50%
 }
 
-/* Responsive: stack and center */
-@media (max-width: 900px){
-    .final__card{
-        grid-template-columns: 1fr;
-        gap: 18px;
-        text-align: center;
-        padding: 22px;
+.cta__orb--a {
+    width: 180px;
+    height: 180px;
+    right: 24px;
+    bottom: -20px;
+    background: radial-gradient(circle, #5ee0ff, transparent 60%);
+    animation: orb 12s ease-in-out infinite
+}
+
+.cta__orb--b {
+    width: 130px;
+    height: 130px;
+    right: 140px;
+    top: 14px;
+    background: radial-gradient(circle, #3ee0c4, transparent 60%);
+    animation: orb 10s ease-in-out infinite reverse
+}
+
+@keyframes orb {
+    0% {
+        transform: translate3d(0, 0, 0)
     }
-    .final__actions{ justify-content: center; }
-    .final__orb{ justify-self: center; }
+    50% {
+        transform: translate3d(-14px, 8px, 0)
+    }
+    100% {
+        transform: translate3d(0, 0, 0)
+    }
+}
+
+@media (max-width: 900px) {
+    .cta__grid {
+        grid-template-columns:1fr;
+        padding: 30px 22px
+    }
+
+    .cta__viz {
+        order: -1;
+        height: 180px
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cta__orb {
+        animation: none
+    }
 }

@@ -1,0 +1,131 @@
+<svg width="720" height="1480" viewBox="0 0 720 1480" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="rim" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2E3B52"></stop>
+      <stop offset="1" stop-color="#1B2536"></stop>
+    </linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#182234"></stop>
+      <stop offset="1" stop-color="#0E1522"></stop>
+    </linearGradient>
+    <linearGradient id="screenGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#081019"></stop>
+      <stop offset="1" stop-color="#0A121A"></stop>
+    </linearGradient>
+    <linearGradient id="cyan" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5EE0FF"></stop>
+      <stop offset="1" stop-color="#3EE0C4"></stop>
+    </linearGradient>
+    <linearGradient id="red" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FF6B7A"></stop>
+      <stop offset="1" stop-color="#FF4D5F"></stop>
+    </linearGradient>
+    <filter id="outerShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="10"></feGaussianBlur>
+      <feOffset dy="14"></feOffset>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.35"></feFuncA>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+    <clipPath id="screenClip">
+      <rect x="84" y="112" width="552" height="1256" rx="56"></rect>
+    </clipPath>
+  </defs>
+
+  <rect x="60" y="80" width="600" height="1320" rx="124" fill="url(#body)" stroke="url(#rim)" stroke-width="10" filter="url(#outerShadow)"></rect>
+
+  <rect x="176" y="118" width="368" height="52" rx="26" fill="#0B121A"></rect>
+  <circle cx="478" cy="144" r="6" fill="#121A24"></circle>
+  <circle cx="494" cy="144" r="6" fill="#121A24"></circle>
+
+  <rect x="58" y="360" width="12" height="120" rx="6" fill="#0E1622"></rect>
+  <rect x="58" y="520" width="12" height="90" rx="6" fill="#0E1622"></rect>
+  <rect x="650" y="420" width="12" height="140" rx="6" fill="#0E1622"></rect>
+
+  <rect x="84" y="112" width="552" height="1256" rx="68" fill="#05090F"></rect>
+
+  <g clip-path="url(#screenClip)">
+    <rect x="84" y="112" width="552" height="1256" rx="56" fill="url(#screenGrad)"></rect>
+
+    <rect x="124" y="176" width="472" height="140" rx="20" fill="#0E1A23"></rect>
+    <text x="150" y="222" fill="#9FB3C8" font-size="20" font-family="Inter, system-ui">Portfolio</text>
+    <text x="150" y="266" fill="#E8F1F7" font-size="34" font-family="Inter, system-ui" font-weight="800">$1,234,000</text>
+    <rect x="512" y="214" width="68" height="34" rx="10" fill="url(#cyan)"></rect>
+    <text x="522" y="236" fill="#052028" font-size="14" font-family="Inter, system-ui" font-weight="800">Deposit</text>
+
+    <rect x="124" y="346" width="472" height="224" rx="18" fill="#0E1A23"></rect>
+    <text x="150" y="388" fill="#9FB3C8" font-size="18" font-family="Inter, system-ui">BTC/USDT • 1H</text>
+
+    <g transform="translate(150 404)">
+      <rect x="0" y="0" width="420" height="156" rx="14" fill="#0B151C"></rect>
+      <g>
+        <rect x="12" y="26" width="22" height="68" rx="4" fill="url(#cyan)"></rect>
+        <rect x="40" y="40" width="22" height="54" rx="4" fill="url(#red)"></rect>
+        <rect x="68" y="28" width="22" height="66" rx="4" fill="url(#cyan)"></rect>
+        <rect x="96" y="36" width="22" height="58" rx="4" fill="url(#red)"></rect>
+        <rect x="124" y="30" width="22" height="64" rx="4" fill="url(#cyan)"></rect>
+        <rect x="152" y="22" width="22" height="72" rx="4" fill="url(#red)"></rect>
+        <rect x="180" y="38" width="22" height="56" rx="4" fill="url(#cyan)"></rect>
+        <rect x="208" y="24" width="22" height="70" rx="4" fill="url(#red)"></rect>
+        <rect x="236" y="34" width="22" height="60" rx="4" fill="url(#cyan)"></rect>
+        <rect x="264" y="30" width="22" height="64" rx="4" fill="url(#red)"></rect>
+        <rect x="292" y="40" width="22" height="54" rx="4" fill="url(#cyan)"></rect>
+        <rect x="320" y="26" width="22" height="68" rx="4" fill="url(#red)"></rect>
+      </g>
+      <path d="M10 128 C60 108 110 124 160 110 C210 96 260 132 310 116 C360 100 402 120 410 122" fill="none" stroke="url(#cyan)" stroke-width="3" stroke-linecap="round"></path>
+    </g>
+
+    <rect x="124" y="598" width="472" height="168" rx="18" fill="#0E1A23"></rect>
+    <text x="150" y="636" fill="#9FB3C8" font-size="18" font-family="Inter, system-ui">Order Book</text>
+    <g transform="translate(150 654)">
+      <text x="0" y="0" fill="#7FB9C8" font-size="14" font-family="Inter, system-ui">Bids</text>
+      <rect x="0" y="18" width="160" height="10" rx="5" fill="url(#cyan)"></rect>
+      <rect x="0" y="38" width="142" height="10" rx="5" fill="url(#cyan)"></rect>
+      <rect x="0" y="58" width="124" height="10" rx="5" fill="url(#cyan)"></rect>
+    </g>
+    <g transform="translate(358 654)">
+      <text x="0" y="0" fill="#C88A95" font-size="14" font-family="Inter, system-ui">Asks</text>
+      <rect x="0" y="18" width="160" height="10" rx="5" fill="url(#red)"></rect>
+      <rect x="0" y="38" width="142" height="10" rx="5" fill="url(#red)"></rect>
+      <rect x="0" y="58" width="124" height="10" rx="5" fill="url(#red)"></rect>
+    </g>
+
+    <g transform="translate(124 786)">
+      <rect x="0" y="0" width="472" height="86" rx="18" fill="#0E1A23"></rect>
+      <rect x="28" y="22" width="110" height="42" rx="12" fill="url(#cyan)"></rect>
+      <text x="62" y="48" fill="#062128" font-size="16" font-family="Inter, system-ui" font-weight="800">BUY</text>
+      <rect x="164" y="22" width="110" height="42" rx="12" fill="#16212B" stroke="#2A3A4B" stroke-width="1"></rect>
+      <text x="200" y="48" fill="#9FB3C8" font-size="16" font-family="Inter, system-ui" font-weight="800">SELL</text>
+      <rect x="310" y="22" width="150" height="42" rx="12" fill="#0C151D" stroke="#243241" stroke-width="1"></rect>
+      <text x="328" y="47" fill="#7FB9C8" font-size="14" font-family="Inter, system-ui">Limit • 0.25</text>
+    </g>
+
+    <rect x="124" y="900" width="472" height="270" rx="18" fill="#0E1A23"></rect>
+    <text x="150" y="938" fill="#9FB3C8" font-size="18" font-family="Inter, system-ui">Positions</text>
+
+    <g transform="translate(150 956)">
+      <rect x="0" y="0" width="432" height="48" rx="12" fill="#0B151C"></rect>
+      <text x="14" y="30" fill="#9FB3C8" font-size="16" font-family="Inter, system-ui">BTC/USDT</text>
+      <text x="120" y="30" fill="#64798A" font-size="14" font-family="Inter, system-ui">0.53 BTC</text>
+      <text x="378" y="30" fill="#3EE0C4" font-size="16" font-family="Inter, system-ui" font-weight="800">+12.3%</text>
+    </g>
+
+    <g transform="translate(150 1012)">
+      <rect x="0" y="0" width="432" height="48" rx="12" fill="#0B151C"></rect>
+      <text x="14" y="30" fill="#9FB3C8" font-size="16" font-family="Inter, system-ui">ETH/USDT</text>
+      <text x="120" y="30" fill="#64798A" font-size="14" font-family="Inter, system-ui">3.1 ETH</text>
+      <text x="378" y="30" fill="#FF6B7A" font-size="16" font-family="Inter, system-ui" font-weight="800">-2.1%</text>
+    </g>
+
+    <g transform="translate(150 1068)">
+      <rect x="0" y="0" width="432" height="48" rx="12" fill="#0B151C"></rect>
+      <text x="14" y="30" fill="#9FB3C8" font-size="16" font-family="Inter, system-ui">SOL/USDT</text>
+      <text x="120" y="30" fill="#64798A" font-size="14" font-family="Inter, system-ui">120 SOL</text>
+      <text x="378" y="30" fill="#3EE0C4" font-size="16" font-family="Inter, system-ui" font-weight="800">+4.8%</text>
+    </g>
+  </g>
+</svg>

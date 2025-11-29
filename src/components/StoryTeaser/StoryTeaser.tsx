@@ -1,28 +1,30 @@
-import './story.css';
+import './story.css'
 
-export function StoryTeaser() {
+export default function StoryTeaser() {
     return (
-        <section className="story" aria-label="Product teaser">
-            <video
-                className="story__bg"
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="metadata"
-                poster=""
-                aria-hidden="true"
-            >
-                <source src="/video/teaser.mp4" type="video/mp4" />
-            </video>
-
-            <div className="story__overlay" aria-hidden="true" />
-            <div className="story__copy">
-                <h2>Price you expect, speed you need</h2>
-                <p>Route orders through unified liquidity and avoid MEV</p>
+        <section className="story" aria-labelledby="story-title">
+            <div className="story__card">
+                <video
+                    className="story__video"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    src="/video/teaser.mp4"
+                    poster="/ui/teaser.jpg"
+                />
+                <div className="story__overlay" />
+                <div className="story__content">
+                    <h2 id="story-title">Price you expect, speed you need</h2>
+                    <p>Route orders through unified liquidity and avoid MEV</p>
+                    <div className="story__chips">
+                        <span>Best route</span>
+                        <span>MEV shield</span>
+                        <span>Non-custodial</span>
+                    </div>
+                    <a className="btn btn--primary story__cta" href="#demo">Open demo</a>
+                </div>
             </div>
         </section>
-    );
+    )
 }
-
-export default StoryTeaser;
