@@ -18,7 +18,7 @@ export function TrustMarquee() {
                 <div className="trust__chip">Trusted by teams across crypto</div>
 
                 <div className="trust__row">
-                    <Marquee gradient={false} speed={100} pauseOnHover>
+                    <Marquee gradient={false} speed={120} pauseOnHover>
                         {logos.concat(logos).map((l, i) => (
                             <figure key={`logo-${i}`} className="trust__logoWrap">
                                 <img src={`/logos/${l}`} alt="" className="trust__logo" />
@@ -26,9 +26,6 @@ export function TrustMarquee() {
                         ))}
                     </Marquee>
                 </div>
-
-                <span className="trust__edge trust__edge--l" aria-hidden="true" />
-                <span className="trust__edge trust__edge--r" aria-hidden="true" />
             </div>
         </section>
     )

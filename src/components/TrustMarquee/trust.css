@@ -7,13 +7,9 @@
 
 .trust__band {
     position: relative;
-    max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
     padding: 18px 18px 22px;
-    border-radius: 20px;
-    background: radial-gradient(160% 120% at 50% 0%, rgba(94, 224, 255, .08) 0%, rgba(94, 224, 255, 0) 60%),
-    color-mix(in oklab, var(--bg) 88%, black 12%);
-    border: 1px solid rgba(255, 255, 255, .10);
     box-shadow: 0 20px 60px rgba(0, 0, 0, .35), 0 0 0 1px rgba(255, 255, 255, .04) inset;
     overflow: hidden;
 }
@@ -22,12 +18,11 @@
     display: inline-block;
     margin: 0 0 10px 6px;
     padding: 6px 10px;
-    border-radius: 999px;
+    border-radius: 10px;
     font-size: 12px;
     letter-spacing: .12em;
     text-transform: uppercase;
     color: var(--fg);
-    background: linear-gradient(90deg, rgba(94, 224, 255, .18), rgba(62, 224, 196, .14));
     border: 1px solid rgba(255, 255, 255, .14);
 }
 
@@ -46,7 +41,7 @@
     height: 52px;
     margin: 0 10px;
     border-radius: 14px;
-    background: linear-gradient(180deg, rgba(255, 255, 255, .03), rgba(255, 255, 255, 0));
+    background: linear-gradient(180deg, rgba(255, 255, 255, 15%), rgba(255, 255, 255, 0));
     border: 1px solid rgba(255, 255, 255, .06);
     box-shadow: 0 8px 24px rgba(0, 0, 0, .22);
     transition: transform .16s ease, border-color .16s ease, background .16s ease;

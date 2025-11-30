@@ -1,7 +1,7 @@
 .hp{
     position:relative;
-    min-height:166vh;
-    padding:0 0 2vh;
+    min-height:120vh;
+    padding:0;
     background:radial-gradient(120% 120% at 50% 0%, rgba(41,151,158,.08) 0%, transparent 60%);
     overflow:hidden;
     z-index:0;
@@ -13,14 +13,22 @@
     position:sticky;
     top:var(--hdr);
     height:calc(100vh - var(--hdr));
-    display:block;
 }
 
-.hp__text .container{
-    max-width:1120px;
+
+.hp__inner{
+    max-width:1200px;
     margin:0 auto;
-    padding:8px 24px 0;
-    text-align:left;
+    padding:0 24px;
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:40px;
+}
+
+.hp__text{
+    flex:1.1;
 }
 
 .hp__title{
@@ -36,20 +44,58 @@
     margin:0 0 20px;
 }
 
-.hp__cta{display:flex;gap:12px}
+.hp__cta{
+    display:flex;
+    gap:12px;
+}
 
 .hp__stage{
-    position:absolute;
-    inset:0;
-    perspective:1400px;
+    flex:1;
+    position:relative;
+    height:100%;
+    perspective:1000px;
     transform-style:preserve-3d;
     pointer-events:none;
 }
 
+.hp__bg{
+    position:absolute;
+    left:60%;
+    top:68%;
+    transform:translate(-50%, -50%);
+    width:600px;
+    height:1000px;
+    border-radius:50%;
+    background:radial-gradient(circle,
+    rgba(94,224,255,0.30) 0%,
+    rgba(94,224,255,0.16) 35%,
+    rgba(0,0,0,0) 70%
+    );
+    filter:blur(50px);
+    pointer-events:none;
+    z-index:-1;
+}
+
+@keyframes hpStars{
+    0%{
+        transform:translate3d(0,0,0) scale(1);
+        opacity:.18;
+    }
+    50%{
+        transform:translate3d(-20px,-40px,0) scale(1.04);
+        opacity:.26;
+    }
+    100%{
+        transform:translate3d(0,-80px,0) scale(1.02);
+        opacity:.18;
+    }
+}
+
+
 .hp__phone{
     position:absolute;
-    left:50%;
-    top:44%;
+    left:25%;
+    top:35%;
     transform:translate(-50%,-50%);
     transform-style:preserve-3d;
 }
@@ -95,6 +141,26 @@
 }
 
 @media (max-width:960px){
-    .hp{ min-height:162vh; --phone-w:min(330px, 58vw); }
-    .hp__phone{ top:45%; }
+    .hp{
+        min-height:162vh;
+        --phone-w:min(330px, 58vw);
+    }
+
+    .hp__inner{
+        flex-direction:column;
+        align-items:flex-start;
+        justify-content:flex-start;
+        padding-top:16px;
+        gap:32px;
+    }
+
+    .hp__stage{
+        width:100%;
+        height:280px;
+    }
+
+    .hp__phone{
+        left:50%;
+        top:54%;
+    }
 }

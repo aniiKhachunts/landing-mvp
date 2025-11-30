@@ -4,8 +4,7 @@
     min-height: clamp(340px, 55vh, 640px);
     border-radius: var(--radius);
     box-shadow: var(--shadow);
-    margin: 24px auto 56px;
-    max-width: 1200px;
+    margin: 0 0 56px;
 }
 
 .story__card {
