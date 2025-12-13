@@ -53,7 +53,7 @@ export function Header() {
         <header className="hdr">
             <div className="hdr__wrap">
                 <a href="#product" className="hdr__logo">
-                    <span className="hdr__mark" />
+                    <span><img className="hdr__mark" src={"/favicon.png"}/></span>
                     FluxSim
                 </a>
 
