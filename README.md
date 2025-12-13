@@ -1,73 +1,156 @@
-# React + TypeScript + Vite
+# Crypto Execution Landing: Cinematic Web3 MVP
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A production-grade landing page originally built for a crypto-fintech company, recreated here as a **sanitized MVP** for portfolio use.  
+Every interaction, animation, and component remains identical to the delivered product, minus proprietary branding.
 
-Currently, two official plugins are available:
+This project showcases **high-end UI/UX**, **cinematic motion design**, and **advanced frontend engineering**, all built **entirely from scratch**, including design, component architecture, and animations.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🌐 Live Demo
+*https://fluxsim-crypto.vercel.app/*
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## ✨ Overview
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+This landing page is a complete, modern, premium Web3 experience packed with:
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- 🎞 A cinematic hero section with scroll-synchronized phone animation  
+- 📱 A custom iPhone UI mockup for crypto execution flows  
+- 🔁 A dynamic trust marquee with adaptive brightness  
+- 🎥 A gradient-layered video teaser section  
+- 🖼 Smooth GSAP-powered product walkthrough steps  
+- 📊 Feature grids, metrics, tokenomics, security audits & more  
+- ⚡ Highly optimized assets, scroll performance, and interactions  
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Everything is designed to feel **polished, immersive, and production-ready**.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## 🚀 Key Features
+
+### 🎬 Hero Section
+- 3D-style animated phone mockup  
+- Retina-sharp iPhone frame + crypto UI  
+- Smooth parallax, depth, and glow effects  
+- Scroll-linked transforms via Framer Motion  
+
+### 🔁 Trust Marquee
+- Industry logos  
+- Hover-sensitive brightness  
+- Responsive + masked edges  
+
+### 🎥 Story Teaser
+- Auto-playing hero video  
+- Layered gradient overlays  
+- Centered content with call-to-action  
+
+### 📱 Product Walkthrough (ScrollTrigger)
+- Pinned scroll sequence  
+- Step-by-step UI frames  
+- Fade + scale transitions  
+
+### 🧱 Modular Component Architecture
+Includes:
+`HeroPhone`, `TrustMarquee`, `StoryTeaser`, `ProductMockScroll`,  
+`FeaturesGrid`, `MetricsPanel`, `Tokenomics`, `SecurityAudits`,  
+`NetworksMap`, `Testimonials`, `FAQ`, `FinalCTA`, `Footer`.
+
+---
+
+## 🛠 Tech Stack
+
+| Layer | Tools |
+|------|-------|
+| Framework | **React + Vite**, **TypeScript** |
+| Animations | **Framer Motion**, **GSAP ScrollTrigger** |
+| Styling | Custom CSS, CSS variables |
+| Deployment | **Vercel** |
+| Assets | SVG mockups, MP4, optimized PNGs |
+
+---
+## 📁 Project Structure
+
+
+```text
+fluxsim-crypto/
+├── public/
+│   ├── logos/
+│   ├── ui/
+│   ├── video/
+│   ├── favicon.ico
+│   └── index.html
+│
+├── src/
+│   ├── components/
+│   │   ├── Header/
+│   │   │   ├── Header.tsx
+│   │   │   └── header.css
+│   │   ├── HeroPhone/
+│   │   │   ├── HeroPhone.tsx
+│   │   │   └── phone.css
+│   │   ├── TrustMarquee/
+│   │   │   ├── TrustMarquee.tsx
+│   │   │   └── trust.css
+│   │   ├── StoryTeaser/
+│   │   │   ├── StoryTeaser.tsx
+│   │   │   └── story.css
+│   │   ├── ProductMockScroll/
+│   │   │   ├── ProductMockScroll.tsx
+│   │   │   └── pms.css
+│   │   ├── FeaturesGrid/
+│   │   │   ├── FeaturesGrid.tsx
+│   │   │   └── features.css
+│   │   ├── MetricsPanel/
+│   │   │   ├── MetricsPanel.tsx
+│   │   │   └── metrics.css
+│   │   ├── Tokenomics/
+│   │   │   ├── Tokenomics.tsx
+│   │   │   └── tokenomics.css
+│   │   ├── SecurityAudits/
+│   │   │   ├── SecurityAudits.tsx
+│   │   │   └── security.css
+│   │   ├── NetworksMap/
+│   │   │   ├── NetworksMap.tsx
+│   │   │   └── map.css
+│   │   ├── Testimonials/
+│   │   │   ├── Testimonials.tsx
+│   │   │   └── testimonials.css
+│   │   ├── FAQ/
+│   │   │   ├── FAQ.tsx
+│   │   │   └── faq.css
+│   │   ├── FinalCTA/
+│   │   │   ├── FinalCTA.tsx
+│   │   │   └── finalcta.css
+│   │   └── Footer/
+│   │       ├── Footer.tsx
+│   │       └── footer.css
+│   │
+│   ├── App.tsx
+│   ├── App.css
+│   ├── main.tsx
+│   ├── index.css
+│   └── tokens.css
+│
+├── .gitignore
+├── package.json
+├── pnpm-lock.yaml
+├── tsconfig.json
+├── vite.config.ts
+└── README.md
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🔒 About This Demo
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+This project was originally developed for a crypto-fintech company as a production landing page
+
+For portfolio purposes, this repository contains a sanitized demo version with brand-specific materials removed, but all animations, UI patterns, components, and layout logic remain the same.
+
+## 👤 Author
+
+- Ani Khachunts
+- Frontend Engineer & UI/UX Designer
+- Built every part of this project end-to-end:
+- Design → Animation → Architecture → Frontend → Deployment
