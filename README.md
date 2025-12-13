@@ -141,6 +141,16 @@ fluxsim-crypto/
 └── README.md
 ```
 
+---
+
+## 📦 Installation
+
+```sh
+pnpm install
+pnpm dev
+pnpm build
+pnpm preview
+```
 
 ## 🔒 About This Demo
 
