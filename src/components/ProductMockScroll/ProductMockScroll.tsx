@@ -6,46 +6,57 @@ import './pms.css'
 gsap.registerPlugin(ScrollTrigger)
 
 export default function ProductMockScroll() {
-    const ref = useRef<HTMLDivElement>(null)
-    const prefersReduced =
-        typeof window !== 'undefined' &&
-        window.matchMedia &&
-        window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const ref = useRef<HTMLElement>(null)
 
     useLayoutEffect(() => {
-        if (prefersReduced || !ref.current) return
+        if (!ref.current) return
+
+        const reduced =
+            window.matchMedia &&
+            window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+        if (reduced) return
+
+        const hdr = document.querySelector<HTMLElement>('.hdr')?.offsetHeight ?? 64
 
         const ctx = gsap.context(() => {
             const f1 = '.frame--1'
             const f2 = '.frame--2'
             const f3 = '.frame--3'
 
-            gsap.set([f1, f2, f3], { autoAlpha: 0, scale: 0.94 })
+            gsap.set([f1, f2, f3], { autoAlpha: 0, scale: 0.96 })
             gsap.set(f1, { autoAlpha: 1, scale: 1 })
 
             const tl = gsap.timeline({
                 defaults: { ease: 'none' },
                 scrollTrigger: {
                     trigger: ref.current,
-                    start: 'top top',
-                    end: '+=1400',
+                    start: `top top+=${hdr}`,
+                    end: '+=900',
                     scrub: true,
                     pin: true,
+                    pinSpacing: true,
                     anticipatePin: 1,
-                    pinSpacing: true
+                    invalidateOnRefresh: true
                 }
             })
 
             tl
                 .to(f2, { autoAlpha: 1, scale: 1, duration: 1 })
-                .to(f1, { autoAlpha: 0, scale: 0.9, duration: 1 }, '-=0.6')
+                .to(f1, { autoAlpha: 0, scale: 0.94, duration: 1 }, '-=0.6')
                 .to(f3, { autoAlpha: 1, scale: 1, duration: 1 })
-                .to(f2, { autoAlpha: 0, scale: 0.9, duration: 1 }, '-=0.6')
-                .to({}, { duration: 0.5 })
+                .to(f2, { autoAlpha: 0, scale: 0.94, duration: 1 }, '-=0.6')
+                .to({}, { duration: 0.4 })
         }, ref)
 
-        return () => ctx.revert()
-    }, [prefersReduced])
+        const onResize = () => ScrollTrigger.refresh()
+        window.addEventListener('resize', onResize)
+
+        return () => {
+            window.removeEventListener('resize', onResize)
+            ctx.revert()
+        }
+    }, [])
 
     return (
         <section id="walkthrough" ref={ref} className="pms" aria-label="Product walkthrough">

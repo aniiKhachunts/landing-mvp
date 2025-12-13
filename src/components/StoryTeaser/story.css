@@ -15,6 +15,7 @@
     aspect-ratio: 16/9;
     min-height: 360px;
     background: #0b0f14;
+    width: 100%;
 }
 
 .story__video {
@@ -27,18 +28,20 @@
 .story__overlay {
     position: absolute;
     inset: 0;
-    background: radial-gradient(120% 80% at 50% 10%, rgba(5, 16, 23, 0) 0%, rgba(5, 16, 23, .35) 60%),
-    linear-gradient(180deg, rgba(5, 16, 23, .35), rgba(5, 16, 23, .65));
+    background:
+            radial-gradient(120% 80% at 50% 10%, rgba(5, 16, 23, 0) 0%, rgba(5, 16, 23, .35) 60%),
+            linear-gradient(180deg, rgba(5, 16, 23, .35), rgba(5, 16, 23, .65));
 }
 
 .story__content {
-    position: absolute;
-    inset: 0;
-    display: grid;
-    place-content: center;
-    text-align: center;
-    gap: 14px;
-    padding: 24px;
+    position:absolute;
+    inset:0;
+    display:grid;
+    place-content:center;
+    justify-items:center;
+    text-align:center;
+    gap:14px;
+    padding:24px;
 }
 
 .story__content h2 {
@@ -50,6 +53,7 @@
 .story__content p {
     margin: 0;
     color: var(--muted);
+    max-width: 50ch;
 }
 
 .story__chips {
@@ -68,37 +72,28 @@
     color: var(--fg);
 }
 
-.story__content{
-    position:absolute;
-    inset:0;
-    display:grid;
-    place-content:center;
-    justify-items:center;
-    text-align:center;
-    gap:14px;
-    padding:24px;
-}
-
 @media (max-width: 900px) {
     .story {
-        margin: 24px auto 40px
+        margin: 24px auto 40px;
     }
-
     .story__card {
         aspect-ratio: 16/10;
-        min-height: 300px
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .story__video {
-        transform: none
+        min-height: 300px;
     }
 }
 
 @media (max-width: 560px) {
+    .story__content{
+        padding: 18px 14px;
+        gap: 12px;
+    }
     .story__cta {
         width: 100%;
     }
 }
 
+@media (prefers-reduced-motion: reduce) {
+    .story__video {
+        transform: none;
+    }
+}
