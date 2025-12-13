@@ -35,32 +35,34 @@ export default function NetworksMap() {
 
     const filtered = useMemo(() => (active === 'All' ? chains : chains.filter(c => c.tag === active)), [active])
 
-    const onTabClick = (f: Filter) => (e: React.MouseEvent<HTMLAnchorElement>) => {
-        e.preventDefault()
+    const onTabClick = (f: Filter) => {
         setActive(f)
+
         const sp = new URLSearchParams(location.search)
         if (f === 'All') sp.delete('net')
         else sp.set('net', f)
-        const next = `${location.pathname}?${sp.toString()}#networks`.replace(/\?$/, '')
-        history.pushState({}, '', next)
-        const el = document.getElementById('networks')
-        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+
+        const qs = sp.toString()
+        const next = `${location.pathname}${qs ? `?${qs}` : ''}${location.hash || '#networks'}`
+        history.replaceState({}, '', next)
     }
 
     return (
         <section id="networks" className="networks" aria-labelledby="networks-title">
             <header className="networks__hdr">
                 <h2 id="networks-title">Supported networks</h2>
+
                 <nav className="networks__tabs" aria-label="filters">
                     {filters.map(f => (
-                        <a
+                        <button
                             key={f}
+                            type="button"
                             className={`networks__tab ${active === f ? 'is-active' : ''}`}
-                            href={`?net=${encodeURIComponent(f)}#networks`}
-                            onClick={onTabClick(f)}
+                            onClick={() => onTabClick(f)}
+                            aria-pressed={active === f}
                         >
                             {f}
-                        </a>
+                        </button>
                     ))}
                 </nav>
             </header>
